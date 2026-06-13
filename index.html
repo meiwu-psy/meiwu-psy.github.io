@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mei Wu — Developmental Psychology</title>
+<meta name="description" content="Mei Wu, Ph.D. in Developmental and Educational Psychology, studies the cognitive and neural mechanisms of moral judgment in early childhood.">
+
+<meta property="og:title" content="Mei Wu — Developmental Psychology">
+<meta property="og:description" content="Ph.D. in Developmental and Educational Psychology, studying the cognitive and neural mechanisms of moral judgment in early childhood.">
+<meta property="og:type" content="profile">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #fbfaf6;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-muted: #8a8a8a;
+    --accent: #6b1f1f;
+    --rule: #d8d4c8;
+    --highlight: #f1ede0;
+
+    --serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --measure: 720px;
+    --measure-wide: 880px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s ease;
+  }
+  a:hover { text-decoration-color: var(--accent); }
+
+  .page {
+    max-width: var(--measure-wide);
+    margin: 0 auto;
+    padding: 64px 32px 96px;
+  }
+  @media (max-width: 640px) {
+    .page { padding: 40px 20px 72px; }
+    body { font-size: 17px; }
+  }
+
+  /* Header with photo */
+  .header { margin-bottom: 56px; }
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 24px;
+  }
+  .header-photo {
+    flex-shrink: 0;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--rule);
+  }
+  .header-text { flex: 1; min-width: 0; }
+  .header h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+  }
+  .header .role {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+  .header .role .sep { color: var(--ink-muted); margin: 0 8px; }
+
+  @media (max-width: 520px) {
+    .header-top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .header-photo { width: 90px; height: 90px; }
+    .header h1 { font-size: 36px; }
+  }
+
+  nav.primary {
+    font-family: var(--sans);
+    font-size: 13px;
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+  nav.primary a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    margin-right: 28px;
+    transition: color 0.15s ease;
+  }
+  nav.primary a:hover { color: var(--accent); }
+  @media (max-width: 640px) {
+    nav.primary a { margin-right: 16px; }
+  }
+
+  section {
+    padding-top: 56px;
+    scroll-margin-top: 24px;
+  }
+  section h2 {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-muted);
+    margin: 0 0 24px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .prose { max-width: var(--measure); }
+  .prose p { margin: 0 0 18px; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  .lead {
+    font-size: 21px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+
+  .pub-group { margin-bottom: 32px; }
+  .pub-group-label {
+    font-family: var(--sans);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+  .pub {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .pub:last-child { border-bottom: none; }
+  .pub .year {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-muted);
+    padding-top: 4px;
+  }
+  .pub .entry {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  .pub .entry .authors { color: var(--ink); }
+  .pub .entry .authors .me { font-weight: 600; }
+  .pub .entry .title { color: var(--ink); }
+  .pub .entry .title a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--rule);
+    transition: border-color 0.15s ease;
+  }
+  .pub .entry .title a:hover { border-bottom-color: var(--accent); }
+  .pub .entry .venue {
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  .pub .entry .meta {
+    display: block;
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 640px) {
+    .pub { grid-template-columns: 44px 1fr; gap: 12px; }
+    .pub .entry { font-size: 16px; }
+  }
+
+  .research-item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .research-item:last-child { border-bottom: none; }
+  .research-item h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+  .research-item p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: var(--measure);
+  }
+
+  /* ============================================================
+     Projects — image left, content right
+     ============================================================ */
+  .project {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .project:last-child { border-bottom: none; }
+  .project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--rule);
+  }
+  .project-content {
+    min-width: 0;
+  }
+  .project-meta {
+    font-family: var(--sans);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    margin-bottom: 6px;
+  }
+  .project-content h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    margin: 0 0 6px;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .project-role {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    margin: 0 0 12px;
+    letter-spacing: 0.02em;
+  }
+  .project-content p {
+    margin: 0 0 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .project-content p:last-child { margin-bottom: 0; }
+  .project-activities {
+    font-size: 15px !important;
+    color: var(--ink-soft);
+  }
+  @media (max-width: 720px) {
+    .project {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .project-image img {
+      max-width: 100%;
+    }
+  }
+
+  .cv-block { padding: 8px 0; }
+  .cv-block p { margin: 0 0 12px; color: var(--ink-soft); }
+  .cv-link {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 14px;
+    padding: 10px 18px;
+    border: 1px solid var(--ink);
+    text-decoration: none;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .cv-link:hover {
+    background: var(--ink);
+    color: var(--bg);
+    text-decoration: none;
+  }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+  }
+  .contact-list li {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+    padding: 10px 0;
+    font-size: 15px;
+  }
+  .contact-list .label {
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding-top: 3px;
+  }
+  .contact-list .value { color: var(--ink); }
+  @media (max-width: 640px) {
+    .contact-list li { grid-template-columns: 80px 1fr; }
+  }
+
+  footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--ink-muted);
+    letter-spacing: 0.02em;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="header">
+    <div class="header-top">
+      <img src="profile.jpg" alt="Mei Wu" class="header-photo">
+      <div class="header-text">
+        <h1>Mei Wu</h1>
+        <p class="role">
+          Ph.D. in Developmental and Educational Psychology
+          <span class="sep">·</span>
+          Capital Normal University
+        </p>
+      </div>
+    </div>
+    <nav class="primary">
+      <a href="#about">about</a>
+      <a href="#publications">publications</a>
+      <a href="#research">research</a>
+      <a href="#projects">projects</a>
+      <a href="#cv">cv</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="prose">
+      <p class="lead">
+        I study the cognitive and neural mechanisms of moral judgment and prosocial behavior in early childhood, combining computational modeling with functional near-infrared spectroscopy (fNIRS).
+      </p>
+      <p>
+        I received my Ph.D. in Developmental and Educational Psychology from Capital Normal University in 2026, working with Professor Zhengyan Wang at the Research Center for Child Development.
+      </p>
+      <p>
+        My dissertation asks how 6-year-old children make moral judgments, and what the underlying cognitive processes and brain mechanisms look like. Using the CNI framework — a multinomial processing tree model — I separate three independent processes (sensitivity to consequences, sensitivity to norms, and a general inaction preference) and use fNIRS to map them onto cortical activation and resting-state functional connectivity. A parallel line of work follows the longitudinal development of prosocial behavior from 6 to 36 months in a Chinese cohort.
+      </p>
+      <p>
+        I am currently looking for postdoctoral opportunities starting in fall 2026.
+      </p>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <div class="pub-group">
+      <div class="pub-group-label">First-authored / co-first-authored</div>
+
+      <div class="pub">
+        <div class="year">in review</div>
+        <div class="entry">
+          <span class="authors"><span class="me">Wu, M.</span>, Yang, J., Meng, X., Zhang, L., Liang, X., Cheng, N., &amp; Wang, Z.</span>
+          <span class="title">The trade-off between norms and consequences: Cognitive computational mechanisms of moral judgment in early childhood.</span>
+          <span class="venue">Journal of Experimental Child Psychology</span>, under review.
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="year">2026</div>
+        <div class="entry">
+          <span class="authors"><span class="me">Wu, M.</span>, Liang, X., Cheng, N., Liu, J., Sun, Z., Yang, J., … &amp; Wang, Z.</span>
+          <span class="title"><a href="https://doi.org/10.1016/j.jecp.2025.106377" target="_blank" rel="noopener">Developmental trajectory of prosocial behavior between 1 and 3 years: Roles of infant and parental predictors.</a></span>
+          <span class="venue">Journal of Experimental Child Psychology, 262</span>, 106377.
+          <span class="meta">SSCI · JCR Q2</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="year">2025</div>
+        <div class="entry">
+          <span class="authors"><span class="me">Wu, M.</span>, Liang, X., Shi, J., &amp; Wang, Z.</span>
+          <span class="title"><a href="https://doi.org/10.3724/SP.J.1041.2025.0559" target="_blank" rel="noopener">Individual differences in the social evaluation of 6-month-old infants.</a></span>
+          <span class="venue">Acta Psychologica Sinica, 57</span>(4), 559–572.
+          <span class="meta">In Chinese · flagship journal of the Chinese Psychological Society</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="year">2024</div>
+        <div class="entry">
+          <span class="authors">Lin, X., <span class="me">Wu, M.</span><sup>#</sup>, Meng, Y., Zheng, S., &amp; Huang, F.</span>
+          <span class="title"><a href="https://doi.org/10.1007/s12144-024-05850-8" target="_blank" rel="noopener">The impact of encoding-retrieval perceptual differences on the retrieval-divided attention effect.</a></span>
+          <span class="venue">Current Psychology, 43</span>(23), 20496–20504.
+          <span class="meta"><sup>#</sup>Co-first author · SSCI · JCR Q1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-group-label">Co-authored</div>
+
+      <div class="pub">
+        <div class="year">2025</div>
+        <div class="entry">
+          <span class="authors">Peng, Z., Zhang, N., Lian, J., Xu, L., <span class="me">Wu, M.</span>, Shao, Y., &amp; Zhang, Y.</span>
+          <span class="title"><a href="https://doi.org/10.1080/1612197X.2025.2549883" target="_blank" rel="noopener">Functional connectivity in table tennis players under cognitive task demands: Dynamic regulation by the dominant hemisphere.</a></span>
+          <span class="venue">International Journal of Sport and Exercise Psychology</span>, 1–17.
+          <span class="meta">SSCI · JCR Q2</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="year">2024</div>
+        <div class="entry">
+          <span class="authors">Sun, Z., Cheng, N., Liu, J., <span class="me">Wu, M.</span>, Meng, X., Liu, C., … &amp; Wang, Z.</span>
+          <span class="title"><a href="https://doi.org/10.1016/j.ecresq.2024.07.003" target="_blank" rel="noopener">Stop hurting each other: Bidirectional longitudinal relationships and sex differences between parents' negative expressiveness and offspring's problem behaviors.</a></span>
+          <span class="venue">Early Childhood Research Quarterly, 69</span>, 78–87.
+          <span class="meta">SSCI · JCR Q1</span>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="year">2024</div>
+        <div class="entry">
+          <span class="authors">Liu, J., Bai, L., Liang, X., Yuan, S., <span class="me">Wu, M.</span>, Dong, S., … &amp; Wang, Z.</span>
+          <span class="title"><a href="https://doi.org/10.1016/j.chiabu.2024.107004" target="_blank" rel="noopener">Mechanisms in the intergenerational effect of maternal childhood maltreatment on offspring externalizing symptoms: The role of maternal and paternal parenting.</a></span>
+          <span class="venue">Child Abuse &amp; Neglect, 155</span>, 107004.
+          <span class="meta">SSCI · JCR Q1</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+
+    <div class="research-item">
+      <h3>Computational mechanisms of children's moral judgment</h3>
+      <p>
+        Using the CNI multinomial processing tree model, I decompose 6-year-old children's responses to moral dilemmas into three independent processes — sensitivity to consequences, sensitivity to norms, and a general preference for inaction. This is the first systematic application of the CNI framework to Chinese children, and to my knowledge the youngest age group it has been applied to.
+      </p>
+    </div>
+
+    <div class="research-item">
+      <h3>The neural basis of early moral cognition</h3>
+      <p>
+        Combining fNIRS task-state and resting-state measurements, I map the three CNI processes onto cortical activation and intrinsic functional connectivity in young children. Findings highlight a right-lateralized prefrontal pattern in 6-year-olds that contrasts with the more bilateral, distributed adult pattern, and reveal distinct connectivity signatures for each of the three processes.
+      </p>
+    </div>
+
+    <div class="research-item">
+      <h3>Multi-level predictors of moral judgment</h3>
+      <p>
+        I examine how individual-level cognitive factors (theory of mind, effortful control) and family-level environmental factors (maternal warmth, harsh parenting) jointly shape both the behavioral and neural indicators of children's moral judgment, with attention to where these pathways diverge.
+      </p>
+    </div>
+
+    <div class="research-item">
+      <h3>Early development of prosocial behavior</h3>
+      <p>
+        In a parallel longitudinal line of work, I follow children from 6 to 36 months and examine how infant temperament, early social evaluation, and parental prosociality predict the trajectory of their prosocial behavior. This work is part of the BELONGS cohort at Capital Normal University.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <div class="project-image">
+        <img src="project1.jpg" alt="Parent-child fNIRS hyperscanning project">
+      </div>
+      <div class="project-content">
+        <div class="project-meta">NSFC 32471119 · 2025–present</div>
+        <h3>Neural Representations of Preschoolers' Parent–Child Attachment</h3>
+        <p class="project-role">Ph.D. Student Coordinator</p>
+        <p>
+          A longitudinal study examining how early multilevel parent–child interaction synchrony shapes the development of attachment representations in preschoolers, with fNIRS hyperscanning as the central neural measure.
+        </p>
+        <p class="project-activities">
+          I coordinated the full assessment cycle for the cohort — including recruitment, assessor training, parent–child fNIRS hyperscanning, behavioral assessments (e.g., Wechsler), questionnaires, and database maintenance — and led statistical analyses and manuscript writing.
+        </p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-image">
+        <img src="project2.jpg" alt="Mother-child interaction project">
+      </div>
+      <div class="project-content">
+        <div class="project-meta">NSFC 32300896 · 2024–2026</div>
+        <h3>Behavioral and Neural Synchrony in the Intergenerational Transmission of Empathy</h3>
+        <p class="project-role">Ph.D. Student Coordinator</p>
+        <p>
+          A project investigating how behavioral and neural synchrony during mother–child interaction contributes to the intergenerational transmission of empathy in preschoolers.
+        </p>
+        <p class="project-activities">
+          I supervised a team of master's students, coordinated assessment for over 130 families, designed the experimental protocols, and served as the primary experimenter for mother–child fNIRS hyperscanning. Outputs from this project include a first-author paper in <em>Journal of Experimental Child Psychology</em>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>Curriculum Vitae</h2>
+    <div class="cv-block">
+      <p>A full CV with education, publications, research experience, conference talks, and technical skills is available below.</p>
+      <a href="MeiWu_CV.pdf" class="cv-link" download>Download CV (PDF)</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li>
+        <span class="label">Email</span>
+        <span class="value"><a href="mailto:2223501007@cnu.edu.cn">2223501007@cnu.edu.cn</a> &nbsp;·&nbsp; <a href="mailto:noberry@163.com">noberry@163.com</a></span>
+      </li>
+      <li>
+        <span class="label">Address</span>
+        <span class="value">Research Center for Child Development<br>School of Psychology, Capital Normal University<br>Beijing 100048, China</span>
+      </li>
+      <li>
+        <span class="label">Scholar</span>
+        <span class="value"><a href="https://scholar.google.com/citations?user=_y6fgiIAAAAJ" target="_blank" rel="noopener">Google Scholar</a></span>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    Last updated June 2026 · Built with plain HTML &amp; CSS
+  </footer>
+
+</div>
+
+</body>
+</html>
